@@ -9,6 +9,7 @@ class ParserFactory
 {
     /**
      * @param $className
+     * @throws \yii\web\HttpException
      */
     public function factory($className)
     {
