@@ -3,6 +3,7 @@
 namespace common\models;
 
 use common\traits\ModelBehaviorTrait;
+use yii\helpers\ArrayHelper;
 use yii\web\HttpException;
 
 class News extends \common\models\generated\News
@@ -12,6 +13,22 @@ class News extends \common\models\generated\News
 
     const STATUS_PUBLISHED = 1;
     const STATUS_DRAFT = 0;
+
+    /**
+     * Uploaded file
+     * @var
+     */
+    public $imageFile;
+
+    /**
+     * @return array
+     */
+    public function rules()
+    {
+        return ArrayHelper::merge(parent::rules(), [
+            [['imageFile'], 'file'],
+        ]);
+    }
 
     /**
      * Add parsed news to database
@@ -89,5 +106,19 @@ class News extends \common\models\generated\News
         }
 
         $flysystem->write($image,$file);
+    }
+
+    /**
+     * Upload file
+     * @return bool
+     */
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->imageFile->saveAs($_SERVER['DOCUMENT_ROOT'].'/frontend/web/uploads/news/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

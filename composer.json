@@ -22,7 +22,8 @@
         "2amigos/yii2-transliterator-helper": "dev-master",
         "yiister/yii2-gentelella": "~1.0",
         "yiisoft/yii2-sphinx": "^2.0@dev",
-        "yiisoft/yii2-elasticsearch": "~2.0.0"
+        "yiisoft/yii2-elasticsearch": "~2.0.0",
+        "2amigos/yii2-ckeditor-widget": "^1.0@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\News;
+use common\models\NewsCategory;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * NewsCategoryController implements the CRUD actions for NewsCategory model.
  */
-class NewsController extends Controller
+class NewsCategoryController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,13 +30,13 @@ class NewsController extends Controller
     }
 
     /**
-     * Lists all News models.
+     * Lists all NewsCategory models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => News::find(),
+            'query' => NewsCategory::find(),
         ]);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Displays a single News model.
+     * Displays a single NewsCategory model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,30 +58,25 @@ class NewsController extends Controller
     }
 
     /**
-     * Creates a new News model.
+     * Creates a new NewsCategory model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new News();
+        $model = new NewsCategory();
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            if ($model->upload()) {
-                $model->image = $model->imageFile->name;
-
-            }
-            $model->save();
-            return $this->redirect('/admin/news');
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect('/admin/news-category');
         }
+
         return $this->render('create', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing NewsCategory model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -92,15 +86,8 @@ class NewsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            if($model->imageFile){
-                if ($model->upload()) {
-                    $model->image = $model->imageFile->name;
-                }
-            }
-            $model->save();
-            return $this->redirect('/admin/news');
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect('/admin/news-category');
         }
 
         return $this->render('update', [
@@ -109,7 +96,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing NewsCategory model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -123,15 +110,15 @@ class NewsController extends Controller
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the NewsCategory model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return News the loaded model
+     * @return NewsCategory the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = News::findOne($id)) !== null) {
+        if (($model = NewsCategory::findOne($id)) !== null) {
             return $model;
         }
 
