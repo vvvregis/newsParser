@@ -10,7 +10,10 @@ use yii\elasticsearch\Query;
 class ElasticSearch extends BaseSearch implements SearchInterface
 {
 
-
+    /**
+     * Elastic Search method
+     * @return array|mixed|null
+     */
     public function search()
     {
         $query = new Query;
@@ -25,6 +28,11 @@ class ElasticSearch extends BaseSearch implements SearchInterface
 
     }
 
+    /**
+     * Prepared result array for render
+     * @param $result
+     * @return array|null
+     */
     private function prepareResultsArray($result)
     {
         if (!isset($result['hits']['hits']) || count($result['hits']['hits']) == 0) {

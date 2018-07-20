@@ -9,11 +9,18 @@ use yii\web\Controller;
 class SearchController extends Controller
 {
 
+    /**
+     * Render search page
+     * @return string
+     */
     public function actionIndex()
     {
         return $this->render('index');
     }
 
+    /**
+     * Start search
+     */
     public function actionRunSearch()
     {
         $request = \Yii::$app->request;
