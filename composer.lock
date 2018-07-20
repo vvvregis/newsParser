@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a2bc33598405c2942c8d19c3fb49e51",
+    "content-hash": "def6bfccc909df4004a4a52d6c726bd3",
     "packages": [
         {
             "name": "2amigos/yii2-transliterator-helper",
@@ -912,6 +912,105 @@
                 "yii2"
             ],
             "time": "2018-07-05T15:45:38+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-elasticsearch",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-elasticsearch.git",
+                "reference": "d5f9c6cf68b207caef79093b17137fba63c4d7b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-elasticsearch/zipball/d5f9c6cf68b207caef79093b17137fba63c4d7b5",
+                "reference": "d5f9c6cf68b207caef79093b17137fba63c4d7b5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "yiisoft/yii2": "~2.0.14"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\elasticsearch\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc"
+                }
+            ],
+            "description": "Elasticsearch integration and ActiveRecord for the Yii framework",
+            "keywords": [
+                "active-record",
+                "elasticsearch",
+                "fulltext",
+                "search",
+                "yii2"
+            ],
+            "time": "2018-05-04T08:13:52+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-sphinx",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-sphinx.git",
+                "reference": "f533c873fb81e2e2d77d4cde808b01da88fc7ae6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-sphinx/zipball/f533c873fb81e2e2d77d4cde808b01da88fc7ae6",
+                "reference": "f533c873fb81e2e2d77d4cde808b01da88fc7ae6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ext-pdo_mysql": "*",
+                "yiisoft/yii2": "~2.0.13"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\sphinx\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "Sphinx full text search engine extension for the Yii framework",
+            "keywords": [
+                "active-record",
+                "fulltext",
+                "search",
+                "sphinx",
+                "yii2"
+            ],
+            "time": "2018-06-30T22:16:46+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -3781,7 +3880,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "creocoder/yii2-flysystem": 20,
-        "2amigos/yii2-transliterator-helper": 20
+        "2amigos/yii2-transliterator-helper": 20,
+        "yiisoft/yii2-sphinx": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

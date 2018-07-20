@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "creocoder/yii2-flysystem": "dev-master",
         "2amigos/yii2-transliterator-helper": "dev-master",
-        "yiister/yii2-gentelella": "~1.0"
+        "yiister/yii2-gentelella": "~1.0",
+        "yiisoft/yii2-sphinx": "^2.0@dev",
+        "yiisoft/yii2-elasticsearch": "~2.0.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
