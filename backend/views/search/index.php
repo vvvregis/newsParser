@@ -11,3 +11,7 @@
         <?php echo \yii\helpers\Html::button('Elastic Search', ['class' => 'btn btn-success  search-btn', 'data-search-class' => 'ElasticSearch'])?>
     </div>
 </div>
+
+<div class="search-results">
+
+</div>

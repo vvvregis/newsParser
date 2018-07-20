@@ -14,5 +14,18 @@ return [
             'class' => 'creocoder\flysystem\LocalFilesystem',
             'path' => '@uploadfile',
         ],
+        'sphinx' => [
+            'class' => 'yii\sphinx\Connection',
+            'dsn' => 'mysql:host=127.0.0.1;port=9306;',
+            'username' => '',
+            'password' => '',
+        ],
+        'elasticsearch' => [
+            'class' => 'yii\elasticsearch\Connection',
+            'nodes' => [
+                ['http_address' => '127.0.0.1:9200'],
+                // configure more hosts if you have a cluster
+            ],
+        ],
     ],
 ];

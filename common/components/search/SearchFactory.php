@@ -2,12 +2,13 @@
 
 namespace common\components\search;
 
-
 class SearchFactory
 {
-    public function factory($className)
+    public static function factory($className, $query)
     {
-        $provider = new $className;
+        $class = '\common\components\search\providers\\'.$className;
+        $provider = new $class();
+        $provider->setQuery($query);
         return $provider->search();
     }
 }
